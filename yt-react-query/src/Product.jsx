@@ -3,7 +3,9 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 const Product = () => {
+
     const params = useParams();
+
     // Mutations
     const mutation = useMutation({
         mutationFn: (newProduct) => {
@@ -14,6 +16,7 @@ const Product = () => {
     const fetchProduct = async () => {
         const response = await fetch(`https://dummyjson.com/products/${params.productId}`);
         const data = await response.json();
+        console.log(params)
         return data;
     };
 

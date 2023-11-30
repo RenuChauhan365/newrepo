@@ -25,6 +25,7 @@ const router = createBrowserRouter([
     },
 ]);
 
+// here make the instance of the  Queryclient
     const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
@@ -33,9 +34,18 @@ const router = createBrowserRouter([
     },
 });
 
+
+ 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
+
+    // we wrap the all app in queryClient
+
     <QueryClientProvider client={queryClient}>
+
         <RouterProvider router={router} />
+
+{/*  this is  for the react devtools */}
         <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
 );
